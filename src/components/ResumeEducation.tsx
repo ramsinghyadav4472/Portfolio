@@ -1,68 +1,81 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { GraduationCap, Briefcase, Award, Download, Building2 } from "lucide-react";
+import { GraduationCap, Briefcase, Award, Download, Building2, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const timelineEvents = [
   {
-    year: "2026",
-    title: "B.Tech Computer Science",
+    year: "2023 - 2027",
+    title: "Bachelor of Technology",
     subtitle: "Lovely Professional University",
     type: "education",
     icon: <GraduationCap className="w-5 h-5" />,
     details: [
-      "Specialization: Cloud Computing & Full-Stack Development",
-      "Coursework: DSA, Cloud (AWS/OCI), AI/ML, System Design",
-      "CGPA: 7.54 / 10.0"
+      "Specialization: Computer Science & Engineering",
+      "Focusing on Cloud Computing and Enterprise DevOps",
+      "Expected Graduation: 2027"
     ],
     color: "var(--color-primary)"
   },
   {
     year: "2025",
-    title: "Oracle Cloud Architect Professional",
-    subtitle: "Certification",
+    title: "OCI Multicloud Architect Professional",
+    subtitle: "Oracle Cloud Infrastructure",
     type: "certification",
     icon: <Award className="w-5 h-5" />,
     details: [
-      "ID: 102476274OCI2025MCAOCP"
+      "Certified Multicloud Architect Professional",
+      "Expertise in OCI, AWS, and Azure integration"
     ],
     color: "var(--color-secondary)"
   },
   {
-    year: "2024",
-    title: "NGO Internship",
-    subtitle: "Shine India Foundation",
-    type: "experience",
+    year: "2025",
+    title: "OCI Architect Associate",
+    subtitle: "Oracle Cloud Infrastructure",
+    type: "certification",
+    icon: <ShieldCheck className="w-5 h-5" />,
+    details: [
+      "Certified Architect Associate",
+      "Designing resilient cloud infrastructure"
+    ],
+    color: "var(--color-secondary)"
+  },
+  {
+    year: "2025",
+    title: "AWS Academy Cloud Foundation",
+    subtitle: "Amazon Web Services",
+    type: "certification",
+    icon: <Award className="w-5 h-5" />,
+    details: [
+      "Cloud Practitioner Essentials",
+      "Foundational knowledge of AWS cloud services"
+    ],
+    color: "var(--color-secondary)"
+  },
+  {
+    year: "2023",
+    title: "12th Grade (Intermediate)",
+    subtitle: "Government Inter College, Prayagraj UP",
+    type: "education",
     icon: <Building2 className="w-5 h-5" />,
     details: [
-      "S.No: 2024010650LPU",
-      "Donate Organ, Donate Life project"
+      "Percentage: 70%",
+      "Completed secondary education with focused studies in core subjects."
     ],
     color: "var(--color-accent)"
   },
   {
-    year: "2024",
-    title: "Launched RentKart & CrowdSense",
-    subtitle: "Full-Stack & AI Projects",
-    type: "experience",
-    icon: <Briefcase className="w-5 h-5" />,
-    details: [
-      "RentKart: MERN + AWS S3 + EC2",
-      "CrowdSense: Computer Vision + OCI Vision AI"
-    ],
-    color: "var(--color-primary)"
-  },
-  {
-    year: "Previous",
-    title: "Early Education",
-    subtitle: "High School",
+    year: "2021",
+    title: "10th Grade (High School)",
+    subtitle: "St. Xaviers School, Sultanpur, UP",
     type: "education",
     icon: <GraduationCap className="w-5 h-5" />,
     details: [
-      "12th Grade: [XX%]",
-      "10th Grade: [XX%]"
+      "Percentage: 79%",
+      "Solid foundational academic record from a reputable institution."
     ],
-    color: "var(--color-muted-foreground)"
+    color: "var(--color-accent)"
   }
 ];
 
@@ -70,27 +83,27 @@ export default function ResumeEducation() {
   return (
     <div className="flex flex-col space-y-12 max-w-4xl mx-auto">
       <div className="flex justify-between items-end mb-8">
-         <div className="space-y-2">
-           <h3 className="text-2xl font-bold text-white tracking-tight">Interactive Timeline</h3>
-           <p className="text-muted-foreground font-mono text-sm">Experience • Education • Certifications</p>
-         </div>
-         <a href="/assets/resume/RSYADAVSPECRES.pdf" target="_blank" rel="noopener noreferrer" download>
-           <Button variant="outline" className="border-primary/50 text-primary hover:bg-primary/10 neon-border-blue gap-2 h-10">
-             <Download className="w-4 h-4" />
-             Download PDF
-           </Button>
-         </a>
+        <div className="space-y-2">
+          <h3 className="text-2xl font-bold text-white tracking-tight">Interactive Timeline</h3>
+          <p className="text-muted-foreground font-mono text-sm">Experience • Education • Certifications</p>
+        </div>
+        <a href="/assets/resume/RSYADAVSPECRES.pdf" target="_blank" rel="noopener noreferrer" download>
+          <Button variant="outline" className="border-primary/50 text-primary hover:bg-primary/10 neon-border-blue gap-2 h-10">
+            <Download className="w-4 h-4" />
+            Download PDF
+          </Button>
+        </a>
       </div>
 
       <div className="relative border-l border-white/10 ml-6 md:ml-0 space-y-12">
         {timelineEvents.map((event, i) => (
           <div key={i} className="relative pl-8 md:pl-0 group">
             {/* Timeline node */}
-            <div 
+            <div
               className="absolute left-[-5px] md:left-1/2 md:-translate-x-[5px] top-1 w-2.5 h-2.5 rounded-full ring-4 ring-background transition-all duration-300 group-hover:scale-150 z-10"
               style={{ backgroundColor: event.color, boxShadow: `0 0 10px ${event.color}` }}
             />
-            
+
             {/* Desktop Layout (Alternating sides) */}
             <div className={`hidden md:flex items-center w-full ${i % 2 === 0 ? "justify-start" : "justify-end"}`}>
               <div className={`w-[45%] ${i % 2 === 0 ? "text-right pr-12" : "text-left pl-12"}`}>
@@ -102,7 +115,7 @@ export default function ResumeEducation() {
                     <CardContent className="p-5">
                       <div className="flex items-center gap-3 mb-2">
                         <div className="p-2 rounded-md bg-white/5 text-white/80">
-                           {event.icon}
+                          {event.icon}
                         </div>
                         <h4 className="font-bold text-white text-lg leading-tight">{event.title}</h4>
                       </div>
@@ -124,10 +137,10 @@ export default function ResumeEducation() {
             {/* Mobile Layout (Left-aligned) */}
             <div className="md:hidden">
               <div className="mb-2 flex items-center gap-4">
-                  <Badge variant="outline" className="bg-background/50 backdrop-blur-sm" style={{ borderColor: `${event.color}40`, color: event.color }}>
-                    {event.year}
-                  </Badge>
-                  <h4 className="font-bold text-white text-md leading-tight">{event.title}</h4>
+                <Badge variant="outline" className="bg-background/50 backdrop-blur-sm" style={{ borderColor: `${event.color}40`, color: event.color }}>
+                  {event.year}
+                </Badge>
+                <h4 className="font-bold text-white text-md leading-tight">{event.title}</h4>
               </div>
               <Card className="glass border-white/5 bg-background/40 w-full">
                 <CardContent className="p-4">
