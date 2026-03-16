@@ -19,6 +19,7 @@ import { Button } from "@/components/ui/button";
 import { Terminal, Download, ArrowRight } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   const [isTerminalOpen, setIsTerminalOpen] = useState(false);
@@ -29,38 +30,59 @@ export default function Home() {
         <Hero3D />
         
         <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-3xl glass p-8 md:p-12 rounded-2xl border-l-[4px] border-l-primary backdrop-blur-xl">
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 tracking-tighter">
-              Ram Singh <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Yadav</span>
-            </h1>
-            
-            <div className="flex items-center gap-4 mb-8">
-              <span className="flex h-3 w-3 relative">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-accent"></span>
-              </span>
-              <p className="text-xl md:text-2xl text-accent neon-text-green font-mono">
-                Enterprise Cloud & DevOps Engineer
-              </p>
-            </div>
-            
-            <p className="text-muted-foreground text-lg md:text-xl mb-10 leading-relaxed max-w-2xl font-light">
-              Architecting high-availability infrastructure, automated CI/CD pipelines, and robust Kubernetes deployments across multicloud environments. Specializing in OCI and AWS.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href="#infrastructure">
-                <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 neon-border-blue text-md h-12 px-8">
-                  <Terminal className="mr-2 h-5 w-5" />
-                  View Infrastructure
-                </Button>
-              </a>
-              <a href="/assets/resume/RSYADAVSPECRES.pdf" target="_blank" rel="noopener noreferrer" download>
-                <Button size="lg" variant="outline" className="border-secondary text-secondary hover:bg-secondary/10 hover:text-secondary neon-border-purple text-md h-12 px-8 w-full sm:w-auto">
-                  <Download className="mr-2 h-5 w-5" />
-                  Download Resume
-                </Button>
-              </a>
+          <div className="max-w-4xl glass p-8 md:p-12 rounded-2xl border-l-[4px] border-l-primary backdrop-blur-xl relative">
+            <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
+              {/* Profile Photo */}
+              <div className="relative flex-shrink-0 group">
+                <div className="relative w-32 h-32 md:w-44 md:h-44 rounded-full p-1 bg-gradient-to-tr from-primary via-accent to-secondary animate-pulse shadow-[0_0_20px_rgba(0,216,255,0.4)]">
+                  <div className="w-full h-full rounded-full overflow-hidden border-2 border-background bg-background/50">
+                    <Image
+                      src="/assets/images/rsyadav.jpeg"
+                      alt="Ram Singh Yadav"
+                      width={176}
+                      height={176}
+                      className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+                      priority
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Text Content */}
+              <div className="flex-1 text-center md:text-left">
+                <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 tracking-tighter">
+                  Ram Singh <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Yadav</span>
+                </h1>
+                
+                <div className="flex items-center justify-center md:justify-start gap-4 mb-8">
+                  <span className="flex h-3 w-3 relative">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-accent"></span>
+                  </span>
+                  <p className="text-xl md:text-2xl text-accent neon-text-green font-mono">
+                    Enterprise Cloud & DevOps Engineer
+                  </p>
+                </div>
+                
+                <p className="text-muted-foreground text-lg md:text-xl mb-10 leading-relaxed max-w-2xl font-light">
+                  Architecting high-availability infrastructure, automated CI/CD pipelines, and robust Kubernetes deployments across multicloud environments. Specializing in OCI and AWS.
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                  <a href="#infrastructure">
+                    <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 neon-border-blue text-md h-12 px-8">
+                      <Terminal className="mr-2 h-5 w-5" />
+                      View Infrastructure
+                    </Button>
+                  </a>
+                  <a href="/assets/resume/RSYADAVSPECRES.pdf" target="_blank" rel="noopener noreferrer" download>
+                    <Button size="lg" variant="outline" className="border-secondary text-secondary hover:bg-secondary/10 hover:text-secondary neon-border-purple text-md h-12 px-8 w-full sm:w-auto">
+                      <Download className="mr-2 h-5 w-5" />
+                      Download Resume
+                    </Button>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

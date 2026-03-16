@@ -46,6 +46,12 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  
+  // Suppress font fetch errors during build in environments with no internet access
+  // or restricted connectivity (like Docker on Windows)
+  experimental: {
+    optimizePackageImports: ["lucide-react"],
+  },
 };
 
 export default nextConfig;

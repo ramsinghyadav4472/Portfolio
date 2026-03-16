@@ -12,6 +12,8 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 # Disable telemetry during build
 ENV NEXT_TELEMETRY_DISABLED=1
+# Mock Google Fonts during build if network is restricted
+ENV NEXT_FONT_GOOGLE_MOCKED=1
 RUN npm run build
 
 # Stage 3: Runner
