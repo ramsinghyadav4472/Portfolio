@@ -53,7 +53,7 @@ export default function Footer() {
                 <Github size={20} />
               </a>
               <a
-                href="https://linkedin.com/in/yourlinkedin"
+                href="https://linkedin.com/in/ramsinghyadav4472"
                 target="_blank"
                 rel="noreferrer"
                 className="h-10 w-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary hover:bg-secondary hover:text-white transition-all"
@@ -63,7 +63,7 @@ export default function Footer() {
                 <Linkedin size={20} />
               </a>
               <a
-                href="mailto:your.email@example.com"
+                href="mailto:ramsinghyadav4472@gmail.com"
                 className="h-10 w-10 rounded-full bg-accent/10 flex items-center justify-center text-accent hover:bg-accent hover:text-white transition-all"
                  style={{boxShadow: '0 0 10px var(--color-accent), inset 0 0 10px var(--color-accent)'}}
                 title="Email"
